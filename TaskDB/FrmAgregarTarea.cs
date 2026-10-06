@@ -29,7 +29,7 @@ namespace TaskDB
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            // RNF2.1: Validar obligatoriedad del campo Título
+           
             if (string.IsNullOrWhiteSpace(txtTitulo.Text))
             {
                 MessageBox.Show("El campo 'Título' es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -45,7 +45,7 @@ namespace TaskDB
                 {
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
-                        // RNF2.2: Usar parámetros SQL para prevenir SQL Injection
+                       
                         cmd.Parameters.AddWithValue("@Titulo", txtTitulo.Text.Trim());
                         cmd.Parameters.AddWithValue("@Descripcion", string.IsNullOrWhiteSpace(txtDescripcion.Text) ? (object)DBNull.Value : txtDescripcion.Text.Trim());
                         cmd.Parameters.AddWithValue("@Estado", cmbEstado.SelectedItem.ToString());

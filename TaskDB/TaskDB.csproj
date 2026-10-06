@@ -59,6 +59,12 @@
     <Compile Include="FrmAgregarTarea.Designer.cs">
       <DependentUpon>FrmAgregarTarea.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmListadoTareas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListadoTareas.Designer.cs">
+      <DependentUpon>FrmListadoTareas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -66,6 +72,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAgregarTarea.resx">
       <DependentUpon>FrmAgregarTarea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmListadoTareas.resx">
+      <DependentUpon>FrmListadoTareas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
