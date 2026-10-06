@@ -16,5 +16,11 @@ namespace TaskDB
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmAgregarTarea frm = new FrmAgregarTarea();
+            frm.ShowDialog();
+        }
     }
 }
