@@ -30,6 +30,10 @@
         {
             this.dgvTareas = new System.Windows.Forms.DataGridView();
             this.btnCargar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbFiltroEstado = new System.Windows.Forms.ComboBox();
+            this.btnNuevaTarea = new System.Windows.Forms.Button();
+            this.btnMarcarCompletada = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTareas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -37,36 +41,81 @@
             // 
             this.dgvTareas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTareas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTareas.Location = new System.Drawing.Point(37, 22);
+            this.dgvTareas.Location = new System.Drawing.Point(28, 18);
+            this.dgvTareas.Margin = new System.Windows.Forms.Padding(2);
             this.dgvTareas.Name = "dgvTareas";
             this.dgvTareas.RowHeadersWidth = 51;
             this.dgvTareas.RowTemplate.Height = 24;
-            this.dgvTareas.Size = new System.Drawing.Size(929, 353);
+            this.dgvTareas.Size = new System.Drawing.Size(633, 287);
             this.dgvTareas.TabIndex = 0;
             // 
             // btnCargar
             // 
             this.btnCargar.BackColor = System.Drawing.Color.LightCoral;
             this.btnCargar.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCargar.Location = new System.Drawing.Point(388, 393);
+            this.btnCargar.Location = new System.Drawing.Point(291, 319);
+            this.btnCargar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCargar.Name = "btnCargar";
-            this.btnCargar.Size = new System.Drawing.Size(192, 45);
+            this.btnCargar.Size = new System.Drawing.Size(144, 37);
             this.btnCargar.TabIndex = 1;
             this.btnCargar.Text = "Cargar Tareas";
             this.btnCargar.UseVisualStyleBackColor = false;
             this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(682, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Filtrar Estado:";
+            // 
+            // cmbFiltroEstado
+            // 
+            this.cmbFiltroEstado.FormattingEnabled = true;
+            this.cmbFiltroEstado.Location = new System.Drawing.Point(772, 18);
+            this.cmbFiltroEstado.Name = "cmbFiltroEstado";
+            this.cmbFiltroEstado.Size = new System.Drawing.Size(241, 21);
+            this.cmbFiltroEstado.TabIndex = 3;
+            // 
+            // btnNuevaTarea
+            // 
+            this.btnNuevaTarea.Location = new System.Drawing.Point(772, 87);
+            this.btnNuevaTarea.Name = "btnNuevaTarea";
+            this.btnNuevaTarea.Size = new System.Drawing.Size(129, 35);
+            this.btnNuevaTarea.TabIndex = 4;
+            this.btnNuevaTarea.Text = "Nueva Tarea";
+            this.btnNuevaTarea.UseVisualStyleBackColor = true;
+            this.btnNuevaTarea.Click += new System.EventHandler(this.btnNuevaTarea_Click);
+            // 
+            // btnMarcarCompletada
+            // 
+            this.btnMarcarCompletada.Location = new System.Drawing.Point(907, 87);
+            this.btnMarcarCompletada.Name = "btnMarcarCompletada";
+            this.btnMarcarCompletada.Size = new System.Drawing.Size(106, 35);
+            this.btnMarcarCompletada.TabIndex = 5;
+            this.btnMarcarCompletada.Text = "Marcar como Completada";
+            this.btnMarcarCompletada.UseVisualStyleBackColor = true;
+            this.btnMarcarCompletada.Click += new System.EventHandler(this.btnMarcarCompletada_Click);
+            // 
             // FrmListadoTareas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(999, 487);
+            this.ClientSize = new System.Drawing.Size(1087, 396);
+            this.Controls.Add(this.btnMarcarCompletada);
+            this.Controls.Add(this.btnNuevaTarea);
+            this.Controls.Add(this.cmbFiltroEstado);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCargar);
             this.Controls.Add(this.dgvTareas);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmListadoTareas";
             this.Text = "FrmListadoTareas";
             ((System.ComponentModel.ISupportInitialize)(this.dgvTareas)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -74,5 +123,9 @@
 
         private System.Windows.Forms.DataGridView dgvTareas;
         private System.Windows.Forms.Button btnCargar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbFiltroEstado;
+        private System.Windows.Forms.Button btnNuevaTarea;
+        private System.Windows.Forms.Button btnMarcarCompletada;
     }
 }
