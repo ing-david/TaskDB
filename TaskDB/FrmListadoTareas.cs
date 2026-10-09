@@ -125,5 +125,59 @@ namespace TaskDB
                 MessageBox.Show("Error al actualizar el estado: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnEliminarTarea_Click(object sender, EventArgs e)
+        {
+            
+            if (dgvTareas.SelectedRows.Count == 0 && dgvTareas.CurrentRow == null)
+            {
+                MessageBox.Show("Por favor, seleccione una tarea de la tabla para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            
+            int idTarea = Convert.ToInt32(dgvTareas.CurrentRow.Cells["Id"].Value);
+            string tituloTarea = dgvTareas.CurrentRow.Cells["Titulo"].Value?.ToString() ?? "la tarea seleccionada";
+
+           
+            DialogResult confirmacion = MessageBox.Show(
+                $"¿Está seguro de que desea eliminar '{tituloTarea}'?",
+                "Confirmar Eliminación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (confirmacion == DialogResult.Yes)
+            {
+                string query = "DELETE FROM Tareas WHERE Id = @Id";
+
+                try
+                {
+                    using (SqlConnection con = DatabaseConnection.GetConnection())
+                    {
+                        using (SqlCommand cmd = new SqlCommand(query, con))
+                        {
+                            cmd.Parameters.AddWithValue("@Id", idTarea);
+                            con.Open();
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+
+                    MessageBox.Show("Tarea eliminada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    
+                    CargarTareas();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al eliminar la tarea: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
