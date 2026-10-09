@@ -94,14 +94,12 @@ namespace TaskDB
 
         private void btnMarcarCompletada_Click(object sender, EventArgs e)
         {
-            // Verificar que se haya seleccionado una fila en la grilla
             if (dgvTareas.SelectedRows.Count == 0 && dgvTareas.CurrentRow == null)
             {
                 MessageBox.Show("Seleccione una tarea de la grilla para actualizar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Obtener el ID de la tarea seleccionada en la columna "Id"
             int idTarea = Convert.ToInt32(dgvTareas.CurrentRow.Cells["Id"].Value);
 
             string query = "UPDATE Tareas SET Estado = 'Completada' WHERE Id = @Id";
@@ -120,7 +118,6 @@ namespace TaskDB
 
                 MessageBox.Show("Tarea actualizada a 'Completada'.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Recargar el DataGridView para reflejar el cambio de estado
                 CargarTareas();
             }
             catch (Exception ex)
